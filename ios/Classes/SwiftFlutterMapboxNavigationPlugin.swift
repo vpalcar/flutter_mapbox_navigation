@@ -88,7 +88,7 @@ public class NavigationFactory : NSObject, FlutterStreamHandler, NavigationViewC
     var _allowsUTurnAtWayPoints: Bool?
     var _isOptimized = false
     var _language = "en"
-    var _voiceUnits = "imperial"
+    var _voiceUnits = "metric"
     var _mapStyleUrlDay: String?
     var _mapStyleUrlNight: String?
     var _zoom: Double = 13.0
@@ -185,7 +185,7 @@ public class NavigationFactory : NSObject, FlutterStreamHandler, NavigationViewC
             options.allowsUTurnAtWaypoint = _allowsUTurnAtWayPoints!
         }
         
-        options.distanceMeasurementSystem = _voiceUnits == "imperial" ? .imperial : .metric
+        options.distanceMeasurementSystem = _voiceUnits == "imperial" ? .metric : .metric
         options.locale = Locale(identifier: _language)
         
         Directions.shared.calculate(options) { [weak self](session, result) in
@@ -788,7 +788,7 @@ public class FlutterMapboxNavigationView : NavigationFactory, MGLMapViewDelegate
             routeOptions.allowsUTurnAtWaypoint = _allowsUTurnAtWayPoints!
         }
         
-        routeOptions.distanceMeasurementSystem = _voiceUnits == "imperial" ? .imperial : .metric
+        routeOptions.distanceMeasurementSystem = _voiceUnits == "imperial" ? .metric : .metric
         routeOptions.locale = Locale(identifier: _language)
         
 

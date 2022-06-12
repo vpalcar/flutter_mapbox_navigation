@@ -174,7 +174,7 @@ public class FlutterMapboxNavigationPlugin: FlutterPlugin, MethodCallHandler, Ev
     if(units != null)
     {
       if(units == "imperial")
-        navigationVoiceUnits = DirectionsCriteria.IMPERIAL
+        navigationVoiceUnits = DirectionsCriteria.METRIC
       else if(units == "metric")
         navigationVoiceUnits = DirectionsCriteria.METRIC
     }
