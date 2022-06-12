@@ -278,6 +278,7 @@ public class NavigationFactory : NSObject, FlutterStreamHandler, NavigationViewC
             if(isEmbeddedNavigation)
             {
                 self._navigationViewController?.view.removeFromSuperview()
+                self._navigationViewController?.removeFromParent()
                 self._navigationViewController = nil
             }
             else
@@ -291,7 +292,7 @@ public class NavigationFactory : NSObject, FlutterStreamHandler, NavigationViewC
                 })
             }
         }
-        
+
     }
     
     func getLastKnownLocation() -> Waypoint
