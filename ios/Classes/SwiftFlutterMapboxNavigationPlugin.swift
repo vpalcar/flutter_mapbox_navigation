@@ -5,6 +5,11 @@ import MapboxDirections
 import MapboxCoreNavigation
 import MapboxNavigation
 
+
+struct DrivingState {
+    static var distanceRemaining: Double = 0.0
+    static var durationRemaining: Double = 0.0
+}
 public class SwiftFlutterMapboxNavigationPlugin: NavigationFactory, FlutterPlugin {
     
     public static func register(with registrar: FlutterPluginRegistrar) {
@@ -30,11 +35,15 @@ public class SwiftFlutterMapboxNavigationPlugin: NavigationFactory, FlutterPlugi
         }
         else if(call.method == "getDistanceRemaining")
         {
-            result(_distanceRemaining)
+            let distance = DrivingState.distanceRemaining
+            print("distnaceRemaining normal = \(distance)")
+            result(distance)
         }
         else if(call.method == "getDurationRemaining")
         {
-            result(_durationRemaining)
+            let duration = DrivingState.durationRemaining
+            print("durationRemaining normal = \(duration)")
+            result(duration)
         }
         else if(call.method == "startNavigation")
         {
@@ -348,7 +357,10 @@ public class NavigationFactory : NSObject, FlutterStreamHandler, NavigationViewC
     public func navigationViewController(_ navigationViewController: NavigationViewController, didUpdate progress: RouteProgress, with location: CLLocation, rawLocation: CLLocation) {
         _lastKnownLocation = location
         _distanceRemaining = progress.distanceRemaining
+
         _durationRemaining = progress.durationRemaining
+        DrivingState.distanceRemaining = progress.distanceRemaining
+        DrivingState.durationRemaining = progress.durationRemaining
         sendEvent(eventType: MapBoxEventType.navigation_running)
         //_currentLegDescription =  progress.currentLeg.description
         if(_eventSink != nil)
