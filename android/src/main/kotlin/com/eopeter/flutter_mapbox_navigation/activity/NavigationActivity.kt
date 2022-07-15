@@ -330,7 +330,7 @@ class NavigationActivity : AppCompatActivity() {
         // applyDefaultNavigationOptions and applyLanguageAndVoiceUnitOptions
         // that make sure the route request is optimized
         // to allow for support of all of the Navigation SDK features
-               println('REQUEST: addWayPoint function')
+               println("REQUEST: addWayPoint function")
         mapboxNavigation.requestRoutes(
             RouteOptions.builder()
                 .applyDefaultNavigationOptions()
@@ -352,7 +352,7 @@ class NavigationActivity : AppCompatActivity() {
                 .layersList(listOf(mapboxNavigation.getZLevel(), null))
                 .build(),
             object : RouterCallback {
-                
+
                 override fun onRoutesReady(
                     routes: List<DirectionsRoute>,
                     routerOrigin: RouterOrigin
@@ -396,11 +396,11 @@ class NavigationActivity : AppCompatActivity() {
         }
 
         // execute a route request
-        // it's recommended to use the
+        // it"s recommended to use the
         // applyDefaultNavigationOptions and applyLanguageAndVoiceUnitOptions
         // that make sure the route request is optimized
         // to allow for support of all of the Navigation SDK features
-        println('REQUEST: addWayPoint function')
+        println("REQUEST: addWayPoint function")
         mapboxNavigation.requestRoutes(
             RouteOptions.builder()
                 .applyDefaultNavigationOptions()

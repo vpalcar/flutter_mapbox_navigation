@@ -1,5 +1,6 @@
 package com.eopeter.flutter_mapbox_navigation
 
+import android.util.Log
 import android.app.Activity
 import android.app.Application
 import android.content.Context
@@ -286,7 +287,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
     }
 
     private fun buildRoute(methodCall: MethodCall, result: MethodChannel.Result) {
-        println('build route')
+        Log.i("Utility", "build route")
 
         isNavigationCanceled = false
         isNavigationInProgress = false
@@ -313,8 +314,8 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
     }
 
     private fun getRoute(context: Context) {
-        println('get route')
-        println('Print for get route')
+        Log.i("Utility", "get route")
+        println("Print for get route")
    
 
 //        val originLocation = navigationLocationProvider.lastLocation
@@ -361,7 +362,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
 
                 override fun onRoutesReady(routes: List<DirectionsRoute>,
                                            routerOrigin: RouterOrigin) {
-                                            println( 'request success')
+                                            Log.i("Utility", "request success")
 
                     if (routes.isEmpty()){
                         PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILD_NO_ROUTES_FOUND)
@@ -386,7 +387,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                 override fun onFailure(reasons: List<RouterFailure>,
                                        routeOptions: RouteOptions
                 ) {
-                    println('request failed')
+                    Log.i("Utility", "request failed")
                     var message = "an error occurred while building the route. Errors: "
                     for (reason in reasons){
                         message += reason.message
@@ -395,7 +396,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                     isBuildingRoute = false
                 }
                 override fun onCanceled(routeOptions: RouteOptions, routerOrigin: RouterOrigin) {
-                    println('request cancelled')
+                    Log.i("Utility", "request cancelled")
                     PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILD_CANCELLED)
                 }
             })
