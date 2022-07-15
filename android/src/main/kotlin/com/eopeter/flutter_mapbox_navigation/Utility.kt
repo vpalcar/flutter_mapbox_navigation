@@ -341,6 +341,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                 .continueStraight(!allowsUTurnAtWayPoints)
                 .voiceUnits(navigationVoiceUnits)
                 .annotations(DirectionsCriteria.ANNOTATION_DISTANCE)
+                .roundaboutExits(false)
                 .baseUrl("https://api.mapbox.com")
                 .user("mapbox")
                 // provide the bearing for the origin of the request to ensure
@@ -428,6 +429,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
     }
 
     private fun startNavigation(methodCall: MethodCall, result: MethodChannel.Result) {
+        Log.i("Utility", "Starting global navigation")
 
         val arguments = methodCall.arguments as? Map<*, *>
         if(arguments != null)
@@ -454,6 +456,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
     }
 
     private fun startNavigation() {
+        Log.i("Utility", "Starting navigation")
         isNavigationCanceled = false
 
         if (currentRoute != null) {

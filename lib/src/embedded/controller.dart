@@ -85,6 +85,7 @@ class MapBoxNavigationViewController {
 
   /// starts listening for events
   Future<void> initialize() async {
+    print('Calling initialize navigation');
     _routeEventSubscription = _streamRouteEvent!.listen(_onProgressData);
   }
 
@@ -98,6 +99,7 @@ class MapBoxNavigationViewController {
     Map<String, dynamic>? args;
     if (options != null) args = options.toMap();
     //_routeEventSubscription = _streamRouteEvent.listen(_onProgressData);
+    print('Calling start navigation');
     return _methodChannel.invokeMethod('startNavigation', args);
   }
 
