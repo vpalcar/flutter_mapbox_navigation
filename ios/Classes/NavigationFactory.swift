@@ -309,6 +309,7 @@ extension NavigationFactory : NavigationViewControllerDelegate {
         _lastKnownLocation = location
         _distanceRemaining = progress.distanceRemaining
         _durationRemaining = progress.durationRemaining
+        printf("Sending navigation_running running event from NavigationFactory")
         sendEvent(eventType: MapBoxEventType.navigation_running)
         //_currentLegDescription =  progress.currentLeg.description
         if(_eventSink != nil)
