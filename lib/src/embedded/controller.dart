@@ -77,6 +77,7 @@ class MapBoxNavigationViewController {
     args["wayPoints"] = wayPointMap;
 
     _routeEventSubscription = _streamRouteEvent!.listen(_onProgressData);
+    print('Calling build route');
     return await _methodChannel
         .invokeMethod('buildRoute', args)
         .then<bool>((dynamic result) => result);
