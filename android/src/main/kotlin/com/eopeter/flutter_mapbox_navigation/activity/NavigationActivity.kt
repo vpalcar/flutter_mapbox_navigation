@@ -352,6 +352,7 @@ class NavigationActivity : AppCompatActivity() {
                 .layersList(listOf(mapboxNavigation.getZLevel(), null))
                 .build(),
             object : RouterCallback {
+                
                 override fun onRoutesReady(
                     routes: List<DirectionsRoute>,
                     routerOrigin: RouterOrigin

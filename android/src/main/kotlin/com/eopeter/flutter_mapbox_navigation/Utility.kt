@@ -312,6 +312,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
     }
 
     private fun getRoute(context: Context) {
+        println('REQUEST: in utility.kt file')
 
 //        val originLocation = navigationLocationProvider.lastLocation
 //        val originPoint = originLocation?.let {
@@ -324,7 +325,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
         }
 
         PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILDING)
-        println('REQUEST: in utility.kt file')
+     
         mapboxNavigation.requestRoutes(
             RouteOptions.builder()
                 .applyDefaultNavigationOptions()
@@ -337,7 +338,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                 .voiceUnits(navigationVoiceUnits)
                 .annotations(DirectionsCriteria.ANNOTATION_DISTANCE)
                 .baseUrl("https://api.mapbox.com")
-                .user(UUID.randomUUID().toString())
+                .user("mapbox")
                 // provide the bearing for the origin of the request to ensure
                 // that the returned route faces in the direction of the current user movement
                 /*
