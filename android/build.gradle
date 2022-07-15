@@ -81,8 +81,9 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.mapbox.navigation:android:2.2.1"
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-markerview-v9:0.4.0'
+    //implementation ("com.mapbox.navigation:ui:1.2.0", {exclude group: 'com.mapbox.mapboxsdk', module:'mapbox-android-telemetry'})
+    implementation ("com.mapbox.mapboxsdk:mapbox-android-plugin-markerview-v9:0.4.0", {exclude group: 'com.mapbox.mapboxsdk', module:'mapbox-android-telemetry'})
+    implementation ("com.mapbox.navigation:android:2.2.1", {exclude group: 'com.mapbox.mapboxsdk', module:'mapbox-android-telemetry'})
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.google.code.gson:gson:2.8.8'
     implementation 'androidx.appcompat:appcompat:1.4.1'
