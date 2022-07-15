@@ -324,7 +324,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
         }
 
         PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILDING)
-
+        println('REQUEST: in utility.kt file')
         mapboxNavigation.requestRoutes(
             RouteOptions.builder()
                 .applyDefaultNavigationOptions()

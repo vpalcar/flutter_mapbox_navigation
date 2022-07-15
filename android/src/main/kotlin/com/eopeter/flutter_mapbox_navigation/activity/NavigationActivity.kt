@@ -330,7 +330,7 @@ class NavigationActivity : AppCompatActivity() {
         // applyDefaultNavigationOptions and applyLanguageAndVoiceUnitOptions
         // that make sure the route request is optimized
         // to allow for support of all of the Navigation SDK features
-        println('REQUEST: findRoute function')
+               println('REQUEST: addWayPoint function')
         mapboxNavigation.requestRoutes(
             RouteOptions.builder()
                 .applyDefaultNavigationOptions()
