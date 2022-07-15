@@ -334,7 +334,9 @@ class NavigationActivity : AppCompatActivity() {
             RouteOptions.builder()
                 .applyDefaultNavigationOptions()
                 .applyLanguageAndVoiceUnitOptions(this)
+                .voiceUnits("METRIC")
                 .coordinatesList(listOf(originPoint, destination))
+                .roundaboutExits(false)
                 // provide the bearing for the origin of the request to ensure
                 // that the returned route faces in the direction of the current user movement
                 .bearingsList(
@@ -400,6 +402,8 @@ class NavigationActivity : AppCompatActivity() {
             RouteOptions.builder()
                 .applyDefaultNavigationOptions()
                 .applyLanguageAndVoiceUnitOptions(this)
+                .voiceUnits("METRIC")
+                .roundaboutExits(false)
                 .coordinatesList(addedWaypoints.coordinatesList())
                 .waypointIndicesList(addedWaypoints.waypointsIndices())
                 .waypointNamesList(addedWaypoints.waypointsNames())
