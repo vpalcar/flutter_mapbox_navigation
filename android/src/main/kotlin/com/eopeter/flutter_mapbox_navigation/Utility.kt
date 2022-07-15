@@ -1,5 +1,6 @@
 package com.eopeter.flutter_mapbox_navigation
 
+import android.util.Log
 import android.app.Activity
 import android.app.Application
 import android.content.Context
@@ -312,7 +313,8 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
     }
 
     private fun getRoute(context: Context) {
-        println('REQUEST: in utility.kt file')
+        Log.i('Utility', 'REQUEST: in utility.kt file')
+   
 
 //        val originLocation = navigationLocationProvider.lastLocation
 //        val originPoint = originLocation?.let {
@@ -637,7 +639,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
     var mapStyleUrlDay: String? = null
     var mapStyleUrlNight: String? = null
     var navigationLanguage = "en"
-    var navigationVoiceUnits = DirectionsCriteria.IMPERIAL
+    var navigationVoiceUnits = DirectionsCriteria.METRIC
     var zoom = 15.0
     var bearing = 0.0
     var tilt = 0.0
