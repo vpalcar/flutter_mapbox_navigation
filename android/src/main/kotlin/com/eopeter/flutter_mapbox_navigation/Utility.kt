@@ -364,7 +364,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
 
                 override fun onRoutesReady(routes: List<DirectionsRoute>,
                                            routerOrigin: RouterOrigin) {
-                    Log.i("Utility", "request success")
+                    Log.i("Utility", "request was successfully sent")
                     Log.i("Utility", "bla bla bla")
 
                     if (routes.isEmpty()){
