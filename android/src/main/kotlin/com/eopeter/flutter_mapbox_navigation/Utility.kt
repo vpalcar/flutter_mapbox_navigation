@@ -380,9 +380,10 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                     isBuildingRoute = false
 
                     //Start Navigation again from new Point, if it was already in Progress
-                    if (isNavigationInProgress) {
+                    /* if (isNavigationInProgress) {
                         startNavigation()
-                    }
+                    } */
+                    startNavigation()
 
                 }
                 override fun onFailure(reasons: List<RouterFailure>,
