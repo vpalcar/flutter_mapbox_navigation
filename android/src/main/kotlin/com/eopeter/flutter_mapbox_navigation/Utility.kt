@@ -364,13 +364,15 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
 
                 override fun onRoutesReady(routes: List<DirectionsRoute>,
                                            routerOrigin: RouterOrigin) {
-                                            Log.i("Utility", "request success")
+                    Log.i("Utility", "request success")
+                    Log.i("Utility", "bla bla bla")
 
                     if (routes.isEmpty()){
                         Log.i("Utility", "No routes found")
                         PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILD_NO_ROUTES_FOUND)
                         return
                     }
+                    Log.i("Utility", "bla bla bla after if")
 
                     currentRoute = routes[0]
                     //PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILT)
