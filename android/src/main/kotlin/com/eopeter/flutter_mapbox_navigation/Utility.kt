@@ -480,7 +480,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
             // move the camera to overview when new route is available
             navigationCamera.requestNavigationCameraToOverview()
             isNavigationInProgress = true
-            printf("Sending navigation_running running event from Utility")
+        
             PluginUtilities.sendEvent(MapBoxEvents.NAVIGATION_RUNNING)
         }
     }
