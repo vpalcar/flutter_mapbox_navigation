@@ -96,6 +96,7 @@ class MapBoxNavigationViewController {
 
   /// Starts the Navigation
   Future<bool?> startNavigation({MapBoxOptions? options}) async {
+    print('Start navigation in from controller');
     Map<String, dynamic>? args;
     if (options != null) args = options.toMap();
     //_routeEventSubscription = _streamRouteEvent.listen(_onProgressData);
