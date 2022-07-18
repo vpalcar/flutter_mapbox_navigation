@@ -78,6 +78,7 @@ class MapBoxNavigationViewController {
 
     _routeEventSubscription = _streamRouteEvent!.listen(_onProgressData);
     print('Calling build route');
+    print('Additional comment');
     return await _methodChannel
         .invokeMethod('buildRoute', args)
         .then<bool>((dynamic result) => result);
@@ -97,6 +98,7 @@ class MapBoxNavigationViewController {
   /// Starts the Navigation
   Future<bool?> startNavigation({MapBoxOptions? options}) async {
     print('Start navigation in from controller');
+
     Map<String, dynamic>? args;
     if (options != null) args = options.toMap();
     //_routeEventSubscription = _streamRouteEvent.listen(_onProgressData);
