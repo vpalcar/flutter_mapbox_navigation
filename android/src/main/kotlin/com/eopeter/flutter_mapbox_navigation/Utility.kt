@@ -367,6 +367,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
 
                     if (routes.isEmpty()){
                         PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILD_NO_ROUTES_FOUND)
+                        Log.i("Utility", "No routes found")
                         return
                     }
 
@@ -383,6 +384,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                     /* if (isNavigationInProgress) {
                         startNavigation()
                     } */
+                    Log.i("Utility", "before starting navigation")
                     startNavigation()
 
                 }
