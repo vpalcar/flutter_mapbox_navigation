@@ -367,8 +367,8 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                                             Log.i("Utility", "request success")
 
                     if (routes.isEmpty()){
-                        PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILD_NO_ROUTES_FOUND)
                         Log.i("Utility", "No routes found")
+                        PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILD_NO_ROUTES_FOUND)
                         return
                     }
 
@@ -379,7 +379,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                     mapboxNavigation.setRoutes(routes)
                     Log.i("Utility", "route set to mapboxNavigation successfully")
                     // move the camera to overview when new route is available
-                    navigationCamera.requestNavigationCameraToOverview()
+                    //navigationCamera.requestNavigationCameraToOverview()
                     Log.i("Utility", "route set to mapboxNavigation successfully")
                     isBuildingRoute = false
                     Log.i("Utility", "isbuilding route set to false")
