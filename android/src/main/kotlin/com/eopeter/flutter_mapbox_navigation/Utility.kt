@@ -373,7 +373,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                     }
 
                     currentRoute = routes[0]
-                    PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILT)
+                    //PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILT)
                     Log.i("Utility", "route built event sent successfully")
                     // Draw the route on the map
                     mapboxNavigation.setRoutes(routes)
