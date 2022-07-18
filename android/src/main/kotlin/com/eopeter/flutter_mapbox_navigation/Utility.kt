@@ -307,6 +307,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                 wayPoints.add(Point.fromLngLat(longitude, latitude))
             }
             getRoute(context)
+            Log.i("Utility", "getRoute completed")
             result.success(true)
         } else {
             result.success(false)
@@ -373,13 +374,15 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
 
                     currentRoute = routes[0]
                     PluginUtilities.sendEvent(MapBoxEvents.ROUTE_BUILT)
+                    Log.i("Utility", "route built event sent successfully")
                     // Draw the route on the map
                     mapboxNavigation.setRoutes(routes)
+                    Log.i("Utility", "route set to mapboxNavigation successfully")
                     // move the camera to overview when new route is available
                     navigationCamera.requestNavigationCameraToOverview()
-
+                    Log.i("Utility", "route set to mapboxNavigation successfully")
                     isBuildingRoute = false
-
+                    Log.i("Utility", "isbuilding route set to false")
                     //Start Navigation again from new Point, if it was already in Progress
                     /* if (isNavigationInProgress) {
                         startNavigation()
